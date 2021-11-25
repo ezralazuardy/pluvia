@@ -1,18 +1,17 @@
 <template>
   <div class="credits">
     <div>
-      <span>Weather Vue is built with</span>
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue.js</a>,
-      <a href="https://darksky.net/dev/" target="_blank" rel="noopener">Dark Sky API</a>,
+      <span>⛅ Pluvia is a dead simple weather forecast app that built with</span>
+      <a href="https://vuejs.org" target="_blank" rel="noopener">Vue.js</a>,
+      <a href="https://openweathermap.org" target="_blank" rel="noopener">Open Weather Map API</a>,
       <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank" rel="noopener">Google
         Maps JavaScript API</a>,
       <a href="https://developers.google.com/maps/documentation/geocoding/get-api-key" target="_blank" rel="noopener">Google
-        Geocoding API</a>,
+        Geocoding API</a>, and<br/>
       <a href="https://developers.google.com/places/web-service/autocomplete" target="_blank" rel="noopener">Google
-        Places API</a>,
-      and many other great packages.
+        Places API</a>.
       <p class="source">
-        Grab the <a href="https://github.com/krestaino/weather-vue/" target="_blank" rel="noopener">source</a>.
+        Check out the <a href="https://github.com/ezralazuardy/pluvia" target="_blank" rel="noopener">source code</a> 👏.
       </p>
     </div>
   </div>

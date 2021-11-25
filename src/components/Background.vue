@@ -57,7 +57,7 @@ export default {
 
 <style lang="scss">
 #map {
-  filter: grayscale(100);
+  filter: grayscale(90%);
   height: 100%;
   left: 0;
   opacity: 0;

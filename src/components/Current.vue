@@ -22,19 +22,19 @@
 
       <ul class="col details">
         <li>
-          Precipitation: <strong>{{ store.weather.current.precipitation }}%</strong>
-        </li>
-        <li>
           Cloud Coverage: <strong>{{ store.weather.current.clouds }}%</strong>
         </li>
         <li>
           Humidity: <strong>{{ store.weather.current.humidity }}%</strong>
         </li>
         <li>
-          Dew Point: <strong>{{ Math.round(store.weather.current.dew_point) }}° {{ dewPointLabel }}</strong>
+          Wind Direction: <strong>{{ windDirection(store.weather.current.wind_deg) }}</strong>
         </li>
         <li>
           Wind: <strong>{{ store.weather.current.wind_speed }} {{ windSpeedLabel }}</strong>
+        </li>
+        <li>
+          Dew Point: <strong>{{ Math.round(store.weather.current.dew_point) }}° {{ dewPointLabel }}</strong>
         </li>
         <li>
           Visibility: <strong>{{ store.weather.current.visibility }} {{ visibilityLabel }}</strong>
@@ -104,6 +104,10 @@ export default {
     },
     toPercentage(value) {
       return Math.round(value * 100)
+    },
+    windDirection(value) {
+      const compassSector = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N']
+      return compassSector[(value / 22.5).toFixed(0)]
     }
   }
 }

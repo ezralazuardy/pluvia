@@ -100,12 +100,12 @@ export default {
 
 .weather-card {
   background-color: #fbfbfb;
-  border-radius: 3px;
+  border-radius: 12px;
   box-shadow: 0 0 150px 0 rgba(0, 0, 0, 0.5);
   color: #383842;
   display: flex;
   flex-direction: column;
-  margin-top: 10vh;
+  margin-top: 3vh;
   max-width: 800px;
   min-height: 510px;
   padding: 32px;

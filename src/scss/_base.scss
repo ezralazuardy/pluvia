@@ -15,7 +15,7 @@ html {
 
 html, body, button {
   color: $accent;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.4;
@@ -68,7 +68,7 @@ input {
   border: 1px solid #bbb;
   border-radius: 2px;
   color: $accent;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
 
   &.error {
@@ -99,10 +99,10 @@ strong {
   align-items: center;
   background-color: #eaeaec;
   border: 0;
-  border-radius: 2px;
+  border-radius: 6px;
   color: $accent;
   display: flex;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   font-weight: 500;
   justify-content: center;

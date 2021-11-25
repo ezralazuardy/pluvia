@@ -1,12 +1,12 @@
 <template>
   <ul class="forecast">
     <li class="day" v-for="day in daily">
-      <div>{{ dayOfWeek(day.time * 1000, store.weather.timezone) }}</div>
+      <div>{{ dayOfWeek(day.dt * 1000, store.weather.timezone) }}</div>
       <div class="icon">
-        <WeatherIcon :icon="day.icon"></WeatherIcon>
+        <WeatherIcon :icon="day.weather[0].icon"></WeatherIcon>
       </div>
-      <strong>{{ Math.round(day.temperatureMax) }}°</strong>
-      <div>{{ Math.round(day.temperatureMin) }}°</div>
+      <strong>{{ Math.round(day.temp.max) }}°</strong>
+      <div>{{ Math.round(day.temp.min) }}°</div>
     </li>
   </ul>
 </template>
@@ -26,7 +26,7 @@ export default {
       return this.$store.state
     },
     daily() {
-      return this.$store.state.weather.daily.data
+      return this.$store.state.weather.daily
     }
   },
   methods: {

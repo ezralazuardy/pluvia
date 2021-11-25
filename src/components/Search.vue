@@ -202,7 +202,7 @@ export default {
 
     .pac-container {
       background-color: #fbfbfb;
-      border-radius: 0 0 2px 2px;
+      border-radius: 6px;
       border-left: 1px solid #2c2d3e;
       border-right: 1px solid #2c2d3e;
       border-bottom: 1px solid #2c2d3e;
