@@ -40,7 +40,7 @@ export default new Vuex.Store({
           ? query = `latlng=${state.coordinates.latitude},${state.coordinates.longitude}`
           : query = `address=${encodeURIComponent(state.inputQuery)}`
 
-        fetch(`${process.env.API_URL.geocode}${query}`)
+        fetch(`${process.env.GEOCODE_API_URL}${query}`)
           .then(response => {
             if (response.status !== 200) {
               commit('setAppStatus', {
@@ -88,7 +88,7 @@ export default new Vuex.Store({
 
     weather({commit, state}) {
       return new Promise((resolve) => {
-        fetch(`${process.env.API_URL.weather}lat=${state.coordinates.latitude}&lon=${state.coordinates.longitude}&units=${state.units}`)
+        fetch(`${process.env.WEATHER_API_URL}lat=${state.coordinates.latitude}&lon=${state.coordinates.longitude}&units=${state.units}`)
           .then(response => {
             if (response.status !== 200) {
               commit('setAppStatus', {

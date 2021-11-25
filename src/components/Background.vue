@@ -36,7 +36,7 @@ export default {
     },
     googleMaps() {
       const options = {
-        key: process.env.API_KEY.google,
+        key: process.env.GOOGLE_API_KEY,
         libraries: ['places']
       }
       loadGoogleMapsAPI(options)

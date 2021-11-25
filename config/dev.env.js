@@ -1,12 +1,8 @@
-const merge = require('webpack-merge')
-const prodEnv = require('./prod.env')
 const keys = require('../keys')
 
-module.exports = merge(prodEnv, {
+module.exports = {
   NODE_ENV: '"development"',
-  API_KEY: keys.dev,
-  API_URL: {
-    geocode: '"http://localhost:3000/geocode/v1/json?"',
-    weather: '"http://localhost:3000/weather/v1/json?"'
-  }
-})
+  GOOGLE_API_KEY: keys.dev,
+  GEOCODE_API_URL: '"http://localhost:3000/geocode/v1/json?"',
+  WEATHER_API_URL: '"http://localhost:3000/weather/v1/json?"'
+}
