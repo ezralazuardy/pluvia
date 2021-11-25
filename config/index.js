@@ -37,5 +37,5 @@ module.exports = {
   }
 }
 
-const keys = require('./keys.js')
+const keys = require('../keys.js')
 if (!process.env.GOOGLE_API_KEY) process.env.GOOGLE_API_KEY = keys.GOOGLE_API_KEY
