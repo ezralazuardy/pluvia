@@ -1,6 +1,6 @@
-# Weather Vue
+# ⛅ pluvia
 
-Weather app using Vue.js, Google Maps Geocoding, and Dark Sky.
+A dead simple weather forecast app built with Vue.js, Google Map Geocoding, and Open Weather Map.
 
 ![alt tag](https://raw.githubusercontent.com/krestaino/weather-vue/master/static/images/og.jpg)
 
@@ -18,7 +18,7 @@ git submodule update --init
 
 The API backend for this project is a REST API using Node and Express. It's included in this project as a submodule and located in `./api`. The repo can be found [here](https://github.com/krestaino/weather-api). This backend API fetches geolocation data from Google and weather data from Dark Sky and returns it to the Weather Vue app.
 
-Rename `./api/keys.js.example` to `./api/keys.js` and add your [Dark Sky API](https://darksky.net/dev/) and [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/get-api-key) keys.  
+Rename `./api/keys.js.example` to `./api/keys.js` and add your [Dark Sky API](https://darksky.net/dev/) and [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/get-api-key) keys.
 
 ## Build Setup
 
@@ -46,6 +46,3 @@ For detailed explanation on how things work, checkout the [Vue.js Webpack guide]
 * [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/get-api-key)
 * [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/get-api-key)
 * [Google Places API](https://developers.google.com/places/web-service/autocomplete)
-
-## License 
-This project is licensed under the MIT License - see the LICENSE.md file for details

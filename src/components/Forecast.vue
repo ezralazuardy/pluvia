@@ -12,29 +12,29 @@
 </template>
 
 <script>
-  import WeatherIcon from './WeatherIcon'
-  import moment from 'moment'
-  import 'moment-timezone'
+import WeatherIcon from './WeatherIcon'
+import moment from 'moment'
+import 'moment-timezone'
 
-  export default {
-    name: 'forecast',
-    components: {
-      WeatherIcon
+export default {
+  name: 'forecast',
+  components: {
+    WeatherIcon
+  },
+  computed: {
+    store() {
+      return this.$store.state
     },
-    computed: {
-      store () {
-        return this.$store.state
-      },
-      daily () {
-        return this.$store.state.weather.daily.data
-      }
-    },
-    methods: {
-      dayOfWeek (time, zone) {
-        return moment(time).tz(zone).format('ddd')
-      }
+    daily() {
+      return this.$store.state.weather.daily.data
+    }
+  },
+  methods: {
+    dayOfWeek(time, zone) {
+      return moment(time).tz(zone).format('ddd')
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

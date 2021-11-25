@@ -1,4 +1,3 @@
-[submodule "weather-api"]
+[submodule "pluvia-api"]
 	path = api
-	url = https://github.com/krestaino/weather-api
-
+	url = https://github.com/ezralazuardy/pluvia-api

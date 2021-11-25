@@ -17,9 +17,9 @@
 
       <div class="footer">
         <button class="refresh" title="Refresh" @click="fetchWeather">
-          <div v-if="store.weather.currently">
+          <div v-if="store.weather.current">
             <IconRefresh></IconRefresh>
-            <span>Last updated: {{ timestamp(store.weather.currently.time * 1000, store.weather.timezone)}}</span>
+            <span>Last updated: {{ timestamp(store.weather.current.dt * 1000, store.weather.timezone) }}</span>
           </div>
         </button>
 
@@ -34,57 +34,58 @@
 </template>
 
 <script>
-  import Background from './components/Background'
-  import Search from './components/Search'
-  import Current from './components/Current'
-  import Forecast from './components/Forecast'
-  import Credits from './components/Credits'
-  import IconRefresh from './assets/icons/ui/refresh.svg'
-  import IconHelp from './assets/icons/ui/help.svg'
-  import moment from 'moment'
-  import 'moment-timezone'
+import Background from './components/Background'
+import Search from './components/Search'
+import Current from './components/Current'
+import Forecast from './components/Forecast'
+import Credits from './components/Credits'
+import IconRefresh from './assets/icons/ui/refresh.svg'
+import IconHelp from './assets/icons/ui/help.svg'
+import moment from 'moment'
+import 'moment-timezone'
 
-  export default {
-    name: 'app',
-    components: {
-      Background,
-      Search,
-      Current,
-      Forecast,
-      Credits,
-      IconRefresh,
-      IconHelp
-    },
-    computed: {
-      store () {
-        return this.$store.state
-      }
-    },
-    methods: {
-      credits () {
-        (this.store.appStatus.state === 'credits')
-          ? this.$store.dispatch('appStatus', {state: 'loaded'})
-          : this.$store.dispatch('appStatus', {state: 'credits'})
-      },
-      fetchWeather () {
-        this.$store.dispatch('appStatus', {state: 'loading'})
-        this.$store.dispatch('weather').then(() => {
-          this.$store.dispatch('appStatus', {state: 'loaded'})
-        })
-      },
-      timestamp (time, zone) {
-        return moment(time).tz(zone).format('h:mm A')
-      }
-    },
-    mounted () {
-      (localStorage.units) ? this.$store.dispatch('units', localStorage.getItem('units')) : null
+export default {
+  name: 'app',
+  components: {
+    Background,
+    Search,
+    Current,
+    Forecast,
+    Credits,
+    IconRefresh,
+    IconHelp
+  },
+  computed: {
+    store() {
+      return this.$store.state
     }
+  },
+  methods: {
+    credits() {
+      (this.store.appStatus.state === 'credits')
+        ? this.$store.dispatch('appStatus', {state: 'loaded'})
+        : this.$store.dispatch('appStatus', {state: 'credits'})
+    },
+    fetchWeather() {
+      this.$store.dispatch('appStatus', {state: 'loading'})
+      this.$store.dispatch('weather').then(() => {
+        this.$store.dispatch('appStatus', {state: 'loaded'})
+      })
+    },
+    timestamp(time, zone) {
+      return moment(time).tz(zone).format('h:mm A')
+    }
+  },
+  mounted() {
+    (localStorage.units) ? this.$store.dispatch('units', localStorage.getItem('units')) : null
   }
+}
 </script>
 
 <style lang="scss">
 @import 'scss/_base.scss';
 @import 'scss/partials/_spinner.scss';
+
 #app {
   align-items: center;
   display: flex;
@@ -100,7 +101,7 @@
 .weather-card {
   background-color: #fbfbfb;
   border-radius: 3px;
-  box-shadow: 0px 0px 150px 0px rgba(0,0,0,0.5);
+  box-shadow: 0 0 150px 0 rgba(0, 0, 0, 0.5);
   color: #383842;
   display: flex;
   flex-direction: column;
@@ -131,6 +132,7 @@
     min-height: 100vh;
   }
 }
+
 .weather {
   flex: 1;
   margin-top: 16px;
@@ -160,6 +162,7 @@
     }
   }
 }
+
 .loading-or-error {
   align-items: center;
   flex: 1;
