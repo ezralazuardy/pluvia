@@ -7,8 +7,8 @@
 <a href="https://nodejs.org/en/download">
     <img alt="npm Version" src="https://img.shields.io/badge/npm-%3E%3D%206-red">
 </a>
-<a href="https://github.com/ezralazuardy/ezralazuardy.com/blob/master/LICENSE">
-  <img src="https://img.shields.io/github/license/ezralazuardy/ezralazuardy.com" alt="License">
+<a href="https://github.com/ezralazuardy/pluvia/blob/master/LICENSE">
+  <img src="https://img.shields.io/github/license/ezralazuardy/pluvia" alt="License">
 </a>
 
 # ⛅ pluvia
@@ -17,7 +17,7 @@ A dead simple weather forecast app built with Vue.js, Google Map Geocoding, and 
 
 Demo application is accesible at https://pluvia.ezralazuardy.com.
 
-### Prerequisites
+### ✅ Prerequisites
 
 * [Vue.js](https://vuejs.org) `v2`
 * [Express.js](https://expressjs.com) `v4`
@@ -33,32 +33,37 @@ Demo application is accesible at https://pluvia.ezralazuardy.com.
 >
 > If some APIs is not enabled, bug or error may appear in the app.
 
-### Getting Started
+### 🚀 Getting Started
+
+Clone this repository and the [pluvia-api](https://github.com/ezralazuardy/pluvia-api) submodule.
 
 ```bash
 # clone repo and API submodule
 git clone https://github.com/krestaino/weather-vue.git --recursive
 
-# to fetch submodule if already cloned without the `--recursive` flag
+# to fetch submodule if already cloned without the --recursive flag
 git submodule update --init
 ```
 
-### API Backend
+On the root project, copy the `keys.js.example` to `keys.js` and add your
+[Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/get-api-key) key.
 
-The API backend for this project is a REST API using Node and Express. It's included in this project as a submodule and
-located in `./pluvia-api`. The submodule repository can be found [here](https://github.com/ezralazuardy/pluvia-api).
-This API backend fetches geolocation data from Google and weather data from Open Weather Map and returns it to Pluvia as
-JSON data.
+```bash
+# copy the keys.js
+cp keys.js.example keys.js
+```
 
-Rename `./pluvia-api/keys.js.example` to `./pluvia-api/keys.js` and add
-your [Open Weather Map API](https://home.openweathermap.org/api_keys)
-and [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/get-api-key) keys.
 
-### Build Setup
+On the `pluvia-api` directory, copy the `keys.js.example` to `keys.js` and add your
+[Google API](https://developers.google.com/maps/documentation/javascript/get-api-key) key and
+[Open Weather Map API](https://home.openweathermap.org/api_keys) key.
 
-On the root project, rename `keys.js.example` to `keys.js` and add
-your [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/get-api-key) keys. This
-API key is for the background map which uses the Google Maps JavaScript API.
+```bash
+# copy the pluvia-api/keys.js
+cp pluvia-api/keys.js.example pluvia-api/keys.js
+```
+
+Now you can build and run the app.
 
 ``` bash
 # install dependencies
@@ -70,3 +75,12 @@ npm run dev
 # or build for production with minification
 npm run build
 ```
+
+### 🛰️ API Backend
+
+This app uses API Backend named `pluvia-api` that built using Node and Express. This API backend
+fetches geolocation data from Google and weather data from Open Weather Map and returns it to
+the app as JSON data.
+
+It's included in this project as a submodule and located in `./pluvia-api`. The submodule repository
+can be found [here](https://github.com/ezralazuardy/pluvia-api).
