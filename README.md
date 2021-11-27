@@ -45,7 +45,7 @@ git clone https://github.com/krestaino/weather-vue.git --recursive
 git submodule update --init
 ```
 
-On the root project, copy the `keys.js.example` to `keys.js` and add your
+On the root project directory, copy the `keys.js.example` to `keys.js` and add your
 [Google API](https://developers.google.com/maps/documentation/javascript/get-api-key) key.
 
 ```bash
@@ -81,5 +81,5 @@ This app uses API Backend named `pluvia-api` that built using Node and Express. 
 fetches geolocation data from Google and weather data from Open Weather Map and returns it to
 the app as JSON data.
 
-It's included in this project as a submodule and located in `./pluvia-api`. The submodule repository
+It's included in this project as a submodule and located in the `pluvia-api` directory. The submodule repository
 can be found [here](https://github.com/ezralazuardy/pluvia-api).
