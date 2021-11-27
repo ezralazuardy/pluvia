@@ -23,36 +23,35 @@ Demo application is accesible at https://pluvia.ezralazuardy.com.
 * [Express.js](https://expressjs.com) `v4`
 * [Node.js](https://nodejs.org) `v12`
 * [npm](https://nodejs.org) `v6`
-* [Google API Token](https://developers.google.com/maps/documentation/javascript/get-api-key)
-* [Open Weather Map API Token](https://home.openweathermap.org/api_keys)
+* [Google API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
+* [Open Weather Map API Key](https://home.openweathermap.org/api_keys)
 
-> You need to generate a new Google API Token with access to these APIs:
+> You need to generate a new `Google API Token` with access to these APIs:
 > * [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/get-api-key)
 > * [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/get-api-key)
 > * [Google Places API](https://developers.google.com/places/web-service/autocomplete)
 >
-> If some APIs is not enabled, bug or error may appear in the app.
+> If some of those APIs are not enabled, bug or error may appear in the app.
 
 ### 🚀 Getting Started
 
 Clone this repository and the [pluvia-api](https://github.com/ezralazuardy/pluvia-api) submodule.
 
 ```bash
-# clone repo and API submodule
+# clone repo with submodule
 git clone https://github.com/krestaino/weather-vue.git --recursive
 
-# to fetch submodule if already cloned without the --recursive flag
+# fetch the submodule manually if already cloned without the --recursive flag
 git submodule update --init
 ```
 
 On the root project, copy the `keys.js.example` to `keys.js` and add your
-[Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/get-api-key) key.
+[Google API](https://developers.google.com/maps/documentation/javascript/get-api-key) key.
 
 ```bash
 # copy the keys.js
 cp keys.js.example keys.js
 ```
-
 
 On the `pluvia-api` directory, copy the `keys.js.example` to `keys.js` and add your
 [Google API](https://developers.google.com/maps/documentation/javascript/get-api-key) key and
