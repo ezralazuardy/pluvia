@@ -1,5 +1,5 @@
 <a href="https://pluvia.ezralazuardy.com">
-  <img src="https://therealsujitk-vercel-badge.vercel.app/?app=2KTy9vCrCk" alt="Deployment">
+  <img src="https://therealsujitk-vercel-badge.vercel.app/?app=2kty9vcrck" alt="Deployment">
 </a>
 <a href="https://nodejs.org/en/download">
     <img alt="Node Version" src="https://img.shields.io/badge/node-%3E%3D%2012-brightgreen">
@@ -20,11 +20,9 @@ Demo application is accesible at https://pluvia.ezralazuardy.com.
 ### ✅ Prerequisites
 
 * [Vue.js](https://vuejs.org) `v2`
-* [Express.js](https://expressjs.com) `v4`
 * [Node.js](https://nodejs.org) `v12`
 * [npm](https://nodejs.org) `v6`
 * [Google API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
-* [Open Weather Map API Key](https://home.openweathermap.org/api_keys)
 
 > You need to generate a new `Google API Token` with access to these APIs:
 > * [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/get-api-key)
@@ -77,9 +75,8 @@ npm run build
 
 ### 🛰️ API Backend
 
-This app uses API Backend named `pluvia-api` that built using Node and Express. This API backend
-fetches geolocation data from Google and weather data from Open Weather Map and returns it to
-the app as JSON data.
+This app uses API Backend named `pluvia-api` that built using Express.JS. This API backend fetches geolocation data
+from Google and weather data from Open Weather Map and returns it to the app as JSON data.
 
 It's included in this project as a submodule and located in the `pluvia-api` directory. The submodule repository
 can be found [here](https://github.com/ezralazuardy/pluvia-api).
