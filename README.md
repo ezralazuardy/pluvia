@@ -37,7 +37,7 @@ Clone this repository and the [pluvia-api](https://github.com/ezralazuardy/pluvi
 
 ```bash
 # clone repo with submodule
-git clone https://github.com/krestaino/weather-vue.git --recursive
+git clone https://github.com/ezralazuardy/pluvia.git --recursive
 
 # fetch the submodule manually if already cloned without the --recursive flag
 git submodule update --init
