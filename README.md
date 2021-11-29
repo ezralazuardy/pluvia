@@ -75,7 +75,7 @@ npm run build
 
 ### 🛰️ API Backend
 
-This app uses API Backend named `pluvia-api` that built using Express.JS. This API backend fetches geolocation data
+This app uses API Backend named `pluvia-api` that built using Express.js. This API backend fetches geolocation data
 from Google and weather data from Open Weather Map and returns it to the app as JSON data.
 
 It's included in this project as a submodule and located in the `pluvia-api` directory. The submodule repository
