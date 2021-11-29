@@ -19,7 +19,7 @@
         <button class="refresh" title="Refresh" @click="fetchWeather">
           <div v-if="store.weather.current">
             <IconRefresh></IconRefresh>
-            <span>Last updated: {{ timestamp(store.weather.current.dt * 1000, store.weather.timezone) }}</span>
+            <span>Last updated: {{ store.weather.timestamp(store.weather.current.dt * 1000) }}</span>
           </div>
         </button>
 

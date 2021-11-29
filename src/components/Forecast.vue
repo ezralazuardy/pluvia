@@ -1,7 +1,7 @@
 <template>
   <ul class="forecast">
-    <li class="day" v-for="day in daily">
-      <div>{{ dayOfWeek(day.dt * 1000, store.weather.timezone) }}</div>
+    <li class="day" v-for="day in weather.daily">
+      <div>{{ weather.dayOfWeek(day.dt * 1000) }}</div>
       <div class="icon">
         <WeatherIcon :icon="day.weather[0].icon"></WeatherIcon>
       </div>
@@ -13,8 +13,6 @@
 
 <script>
 import WeatherIcon from './WeatherIcon'
-import moment from 'moment'
-import 'moment-timezone'
 
 export default {
   name: 'forecast',
@@ -22,16 +20,8 @@ export default {
     WeatherIcon
   },
   computed: {
-    store() {
-      return this.$store.state
-    },
-    daily() {
-      return this.$store.state.weather.daily
-    }
-  },
-  methods: {
-    dayOfWeek(time, zone) {
-      return moment(time).tz(zone).format('ddd')
+    weather() {
+      return this.$store.state.weather
     }
   }
 }

@@ -11,7 +11,8 @@
       <a href="https://developers.google.com/places/web-service/autocomplete" target="_blank" rel="noopener">Google
         Places API</a>.
       <p class="source">
-        Check out the <a href="https://github.com/ezralazuardy/pluvia" target="_blank" rel="noopener">source code</a> 👏.
+        Check out the <a href="https://github.com/ezralazuardy/pluvia" target="_blank" rel="noopener">source code</a>
+        👏.
       </p>
     </div>
   </div>
@@ -19,12 +20,7 @@
 
 <script>
 export default {
-  name: 'credits',
-  computed: {
-    store() {
-      return this.$store.state
-    }
-  }
+  name: 'credits'
 }
 </script>
 

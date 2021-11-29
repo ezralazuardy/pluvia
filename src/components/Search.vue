@@ -134,7 +134,7 @@ export default {
   },
   watch: {
     formattedAddress() {
-      document.title = `${this.store.geocode.formattedAddress} | Weather Vue`
+      document.title = `${this.store.geocode.formattedAddress} | Pluvia`
     }
   }
 }

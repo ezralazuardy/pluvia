@@ -1,50 +1,39 @@
 import moment from 'moment'
+import 'moment-timezone'
 
 class Weather {
 
   constructor() {
-    this.cloudiness = 0
-    this.dewPoint = 0
-    this.humidity = 0
-    this.temperature = 0
-    this.windSpeed = 0
-    this.visibility = 0
-    this.sunrise = null
-    this.sunset = null
-    this.windDirection = null
-    this.description = null
-    this.weatherIcon = null
-    this.dt = null
-    this.timezone = null
-    this.formattedDate = null
+    this.current = null
+    this.daily = []
+    this.lat = 0
+    this.long = 0
+    this.timezone = ''
+    this.timezone_offset = 0
   }
 
   populate(data) {
-    this.cloudiness = data.clouds
-    this.dewPoint = data.dew_point
-    this.humidity = data.humidity
-    this.temperature = Math.round(data.temp)
-    this.windSpeed = data.wind_speed
-    this.windDirection = this.predictWindDirection(data.wind_deg)
-    this.visibility = data.visibility
-    this.sunrise = this.timestamp(data.sunrise * 1000, data.timezone)
-    this.sunset = this.timestamp(data.sunset * 1000, data.timezone)
-    this.description = data.weather[0].description
-    this.weatherIcon = data.weather[0].icon
-    this.dt = data.dt
+    this.current = data.current
+    this.daily = data.daily
+    this.lat = data.lat
+    this.long = data.lon
     this.timezone = data.timezone
-    this.formattedDate = this.date(data.dt * 1000, data.timezone)
+    this.timezone_offset = data.timezone_offset
   }
 
-  date(time, zone) {
-    return moment(time).tz(zone).format('dddd, MMMM Do')
+  date(time) {
+    return moment(time).tz(this.timezone).format('dddd, MMMM Do')
   }
 
-  timestamp(time, zone) {
-    return moment(time).tz(zone).format('h:mm A')
+  timestamp(time) {
+    return moment(time).tz(this.timezone).format('h:mm A')
   }
 
-  predictWindDirection(windDegree) {
+  dayOfWeek(time) {
+    return moment(time).tz(this.timezone).format('ddd')
+  }
+
+  windDirection(windDegree) {
     const compassSector = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N']
     return compassSector[(windDegree / 22.5).toFixed(0)]
   }

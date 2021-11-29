@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import Weather from './model/Weather'
 
 Vue.use(Vuex)
 
@@ -135,7 +136,9 @@ export default new Vuex.Store({
       state.units = units
       localStorage.setItem('units', units)
     },
-    setWeather: (state, weather) => {
+    setWeather: (state, data) => {
+      const weather = new Weather()
+      weather.populate(data)
       state.weather = weather
     }
   }

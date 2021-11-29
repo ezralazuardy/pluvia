@@ -1,10 +1,9 @@
 <template>
   <div class="current">
     <h1 class="location">{{ store.geocode.formatted_address }}</h1>
-
     <div class="row">
       <div class="col main">
-        <div>{{ date(store.weather.current.dt * 1000, store.weather.timezone) }}</div>
+        <div>{{ store.weather.date(store.weather.current.dt * 1000) }}</div>
         <div>{{ store.weather.current.weather.description }}</div>
         <div class="icon-and-temperature">
           <div class="icon">
@@ -19,7 +18,6 @@
           </div>
         </div>
       </div>
-
       <ul class="col details">
         <li>
           Cloud Coverage: <strong>{{ store.weather.current.clouds }}%</strong>
@@ -28,7 +26,7 @@
           Humidity: <strong>{{ store.weather.current.humidity }}%</strong>
         </li>
         <li>
-          Wind Direction: <strong>{{ windDirection(store.weather.current.wind_deg) }}</strong>
+          Wind Direction: <strong>{{ store.weather.windDirection(store.weather.current.wind_deg) }}</strong>
         </li>
         <li>
           Wind: <strong>{{ store.weather.current.wind_speed }} {{ windSpeedLabel }}</strong>
@@ -40,19 +38,18 @@
           Visibility: <strong>{{ store.weather.current.visibility }} {{ visibilityLabel }}</strong>
         </li>
         <li>
-          Sunrise: <strong>{{ timestamp(store.weather.daily[0].sunrise * 1000, store.weather.timezone) }}</strong>
+          Sunrise: <strong>{{ store.weather.timestamp(store.weather.daily[0].sunrise * 1000) }}</strong>
         </li>
         <li>
-          Sunset: <strong>{{ timestamp(store.weather.daily[0].sunset * 1000, store.weather.timezone) }}</strong>
+          Sunset: <strong>{{ store.weather.timestamp(store.weather.daily[0].sunset * 1000) }}</strong>
         </li>
       </ul>
-    </div> <!-- end .row -->
+    </div>
   </div>
 </template>
 
 <script>
 import WeatherIcon from './WeatherIcon'
-import moment from 'moment'
 import 'moment-timezone'
 
 export default {
@@ -61,6 +58,9 @@ export default {
     WeatherIcon
   },
   computed: {
+    store() {
+      return this.$store.state
+    },
     dewPointLabel() {
       switch (this.store.units) {
         case 'us':
@@ -68,9 +68,6 @@ export default {
         case 'si':
           return 'C'
       }
-    },
-    store() {
-      return this.$store.state
     },
     visibilityLabel() {
       switch (this.store.units) {
@@ -95,19 +92,6 @@ export default {
       this.$store.dispatch('units', units)
       this.$store.dispatch('appStatus', {state: 'loading'})
       this.$store.dispatch('weather').then(() => this.$store.dispatch('appStatus', {state: 'loaded'}))
-    },
-    date(time, zone) {
-      return moment(time).tz(zone).format('dddd, MMMM Do')
-    },
-    timestamp(time, zone) {
-      return moment(time).tz(zone).format('h:mm A')
-    },
-    toPercentage(value) {
-      return Math.round(value * 100)
-    },
-    windDirection(value) {
-      const compassSector = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N']
-      return compassSector[(value / 22.5).toFixed(0)]
     }
   }
 }
