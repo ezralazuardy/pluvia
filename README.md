@@ -1,6 +1,3 @@
-<a href="https://pluvia.ezralazuardy.com">
-  <img src="https://therealsujitk-vercel-badge.vercel.app/?app=2kty9vcrck" alt="Deployment">
-</a>
 <a href="https://nodejs.org/en/download">
     <img alt="Node Version" src="https://img.shields.io/badge/node-%3E%3D%2012-brightgreen">
 </a>
@@ -14,8 +11,6 @@
 # ⛅ pluvia
 
 A dead simple weather forecast app built with Vue.js, Google Map Geocoding, and Open Weather Map.
-
-Demo application is accesible at https://pluvia.ezralazuardy.com.
 
 ### ✅ Prerequisites
 
